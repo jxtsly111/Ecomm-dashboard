@@ -7,18 +7,18 @@ import Login from "./login";
 import Register from "./Register";
 import AddProduct from "./Addproduct";
 import UpdateProduct from "./UpdateProduct";
+import Protected from "./protected";
 
 function App() {
     return (
         <div className="App" >
             <BrowserRouter>
-                <Header />
-                <h1> Ecomm Project </h1>
+                {/* <h1> Ecomm Project </h1> */}
                 <Routes>
                 <Route path='login' element={<Login />} />
                 <Route path='register' element={<Register />} />
-                <Route path='add' element={<AddProduct />} />
-                <Route path='update' element={<UpdateProduct />} />
+                <Route path='add' element={<Protected Cmp = {AddProduct}/>} />
+                <Route path='update' element={<Protected Cmp = {UpdateProduct}/>} />
                 </Routes>
 
             </BrowserRouter>

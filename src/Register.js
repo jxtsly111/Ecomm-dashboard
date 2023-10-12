@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 function Register() {
+
+    useEffect(()=>{
+        if (localStorage.getItem('user-info')) {
+            navigate("/add")
+        }
+    },[])
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
@@ -37,6 +44,9 @@ function Register() {
     }
 
     return (
+        <>
+        <Header />
+
         <div>
             <h1>Register Page</h1>
             <div style={containerStyle}>
@@ -72,6 +82,8 @@ function Register() {
                 </button>
             </div>
         </div>
+        </>
+       
     );
 }
 

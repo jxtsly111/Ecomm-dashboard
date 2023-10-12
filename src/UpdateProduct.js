@@ -1,10 +1,15 @@
-function UpdateProduct() {
+import Header from "./Header";
+ function UpdateProduct() {
     return(
+        <>
+         <Header />
         <div>
             <h1>
                 UpdateProduct
             </h1>
         </div>
+        </>
+       
     )
 }
 
