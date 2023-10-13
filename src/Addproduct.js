@@ -5,8 +5,18 @@ function AddProduct() {
     const [file,setFile]=useState("");
     const [price,setPrice]=useState("");
     const [description,setDescription]=useState("");
-    function addProduct() {
+    async function addProduct() {
         console.warn(name,file,price,description)
+        const formData = new FormData();
+        formData.append('file',file);
+        formData.append('price',price);
+        formData.append('name',name);
+        formData.append('description',description);
+        let result = await fetch("http://127.0.0.1:8000/api/addProduct",{
+            method:'POST',
+            body:formData
+        });
+        alert("Data has been saved")
     }
 
     const containerStyle = {
@@ -31,7 +41,7 @@ function AddProduct() {
                 <input
                     type="text"
                     className="form-control"
-                    value={name}
+                    
                     onChange={(e) => setName(e.target.value)}
                     style={inputStyle}
                     placeholder="name"
@@ -40,8 +50,8 @@ function AddProduct() {
                 <input
                     type="file"
                     className="form-control"
-                    value={file}
-                    onChange={(e) => setFile(e.target.value)}
+                    
+                    onChange={(e) => setFile(e.target.files[0])}
                     style={inputStyle}
                     placeholder="file"
                 />
@@ -49,7 +59,7 @@ function AddProduct() {
                 <input
                     type="text"
                     className="form-control"
-                    value={price}
+                    
                     onChange={(e) => setPrice(e.target.value)}
                     style={inputStyle}
                     placeholder="price"
@@ -59,7 +69,6 @@ function AddProduct() {
                 <input
                     type="text"
                     className="form-control"
-                    value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     style={inputStyle}
                     placeholder="description"
