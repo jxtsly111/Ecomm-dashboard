@@ -1,5 +1,25 @@
 import Header from "./Header";
+import { useState } from "react";
 function AddProduct() {
+    const [name,setName]=useState("");
+    const [file,setFile]=useState("");
+    const [price,setPrice]=useState("");
+    const [description,setDescription]=useState("");
+    function addProduct() {
+        console.warn(name,file,price,description)
+    }
+
+    const containerStyle = {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "500px",
+        margin: "0 auto",
+    };
+
+    const inputStyle = {
+        marginBottom: "10px",
+    };
     return(
         <>
         <Header />
@@ -11,8 +31,8 @@ function AddProduct() {
                 <input
                     type="text"
                     className="form-control"
-                    // value={name}
-                    // onChange={(e) => setName(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     style={inputStyle}
                     placeholder="name"
                 />
@@ -20,8 +40,8 @@ function AddProduct() {
                 <input
                     type="file"
                     className="form-control"
-                    // value={password}
-                    // onChange={(e) => setPassword(e.target.value)}
+                    value={file}
+                    onChange={(e) => setFile(e.target.value)}
                     style={inputStyle}
                     placeholder="file"
                 />
@@ -29,8 +49,8 @@ function AddProduct() {
                 <input
                     type="text"
                     className="form-control"
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
                     style={inputStyle}
                     placeholder="price"
                 />
@@ -39,13 +59,13 @@ function AddProduct() {
                 <input
                     type="text"
                     className="form-control"
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                     style={inputStyle}
                     placeholder="description"
                 />
                 <br />
-                <button className="btn btn-primary">
+                <button onClick={addProduct} className="btn btn-primary">
                     Add Product
                 </button>
             </div>
