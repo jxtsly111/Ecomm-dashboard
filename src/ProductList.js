@@ -38,6 +38,7 @@ function ProductList() {
                         <th>Price</th>
                         <th>Description</th>
                         <th>Image</th>
+                        <th>Operations</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -49,6 +50,7 @@ function ProductList() {
                                 <td>{item.price}</td>
                                 <td>{item.description}</td>
                                 <td><img style={{ width: 80 }} src={"http://127.0.0.1:8000/" + item.file_path}></img></td>
+                                <td><span className="delete">Delete</span></td>
                             </tr>
                         )
                     }
