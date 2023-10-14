@@ -31,4 +31,9 @@ class ProductController extends Controller
             return ["result"=>"Operation failed"];
         }
     }
+
+    
+    function getProduct($id){
+        return Product::find($id);
+    }
 }
