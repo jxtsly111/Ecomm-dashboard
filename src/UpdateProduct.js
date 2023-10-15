@@ -29,6 +29,10 @@ function UpdateProduct() {
             <div>
                 <h1>UpdateProduct</h1>
                 <input type="text" defaultValue={data.name} /> <br /> <br />
+                <input type="text" defaultValue={data.price} /> <br /> <br />
+                <input type="text" defaultValue={data.description} /> <br /> <br />
+                <input type="file" defaultValue={data.file_path} /> <br /> <br />
+                <img style={{width:100}} src={"http://127.0.0.1:8000/"+ data.file_path} /><br /> <br />
                 <button>Update Product</button>
             </div>
         </>
