@@ -1,6 +1,16 @@
 import Header from "./Header";
 import { useState } from "react";
 function SearchProduct() {
+
+    const [data, setData]=useState([])
+
+    async function search(key) {
+        console.warn(key)
+
+        let result = await fetch("http://127.0.0.1:8000/api/search/"+key);
+        result = await result.json();
+        setData(result)
+    }
     const containerStyle = {
         display: "flex",
         flexDirection: "column",
@@ -21,7 +31,7 @@ function SearchProduct() {
         </h1>
         <br />
         <div style={containerStyle}>
-        <input type="text" className="form-control" style={inputStyle} placeholder="Search Product" />
+        <input type="text" onChange={(e)=>search(e.target.value)} className="form-control" style={inputStyle} placeholder="Search Product" />
         </div>
        
         </div>
