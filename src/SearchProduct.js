@@ -19,6 +19,11 @@ function SearchProduct() {
         <h1>
             Search Product
         </h1>
+        <br />
+        <div style={containerStyle}>
+        <input type="text" className="form-control" style={inputStyle} placeholder="Search Product" />
+        </div>
+       
         </div>
         </>
         

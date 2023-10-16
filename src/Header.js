@@ -21,6 +21,7 @@ function Header() {
                                     <Nav.Link as={Link} to="/">Product List</Nav.Link>
                                     <Nav.Link as={Link} to="/add">Add Products</Nav.Link>
                                     <Nav.Link as={Link} to="/update">Update Product</Nav.Link>
+                                    <Nav.Link as={Link} to="/search">Search Product</Nav.Link>
                                 </>
                                 :
                                 <>
